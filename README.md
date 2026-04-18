@@ -1,5 +1,4 @@
 # 🏥 HealthStats: Healthcare Analytics Dashboard (ClinicalOps360)
-# 🏥 HealthStats: Healthcare Analytics Dashboard (HealthStats / ClinicalOps360)
 
 [![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/)
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)](https://github.com/ajaya-kumar-pradhan)
