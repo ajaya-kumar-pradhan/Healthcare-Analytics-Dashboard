@@ -4,6 +4,12 @@
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)](https://github.com/ajaya-kumar-pradhan)
 [![DAX](https://img.shields.io/badge/DAX-Star%20Schema-blue?style=for-the-badge)](https://github.com/ajaya-kumar-pradhan)
 
+<div align="center">
+
+### 👉 [View Live Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiM2FkOGQ5OWYtNzgyMC00MDM1LTk4ZmUtMzA5NGFhYjk1OTk3IiwidCI6IjdlMzEwODQ1LTg0ZTEtNGRiOC1hZjk4LTcwNDA0MTkwZDhkZSJ9&pageName=ce2f74c292644e048628)
+
+</div>
+
 ---
 
 ## 📌 Project Overview
@@ -167,12 +173,6 @@ Deep-dive into:
 - Highlighted high-cost vs low-profit hospital units
 - Improved patient risk visibility across departments
 - Enabled performance comparison across doctors
-
----
-
-## 🔗 Live Dashboard
-
-👉 [View Live Power BI Report](https://app.powerbi.com/view?r=eyJrIjoiM2FkOGQ5OWYtNzgyMC00MDM1LTk4ZmUtMzA5NGFhYjk1OTk3IiwidCI6IjdlMzEwODQ1LTg0ZTEtNGRiOC1hZjk4LTcwNDA0MTkwZDhkZSJ9&pageName=ce2f74c292644e048628)
 
 ---
 
