@@ -170,6 +170,12 @@ Deep-dive into:
 
 ---
 
+## 🔗 Live Dashboard
+
+👉 [View Live Power BI Report](https://app.powerbi.com/view?r=eyJrIjoiM2FkOGQ5OWYtNzgyMC00MDM1LTk4ZmUtMzA5NGFhYjk1OTk3IiwidCI6IjdlMzEwODQ1LTg0ZTEtNGRiOC1hZjk4LTcwNDA0MTkwZDhkZSJ9&pageName=ce2f74c292644e048628)
+
+---
+
 ## 🖼️ Dashboard Preview
 
 ### 1️⃣ Executive Overview
@@ -231,12 +237,6 @@ Deep-dive into:
 > Patient Clinical Profile scatter with risk-coded bubbles (Critical / High / Low / Moderate Risk)
 
 ![Patient — Profile](images/patient_profile.jpg)
-
----
-
-## 🔗 Live Dashboard
-
-👉 [View Live Power BI Report](https://app.powerbi.com/view?r=eyJrIjoiM2FkOGQ5OWYtNzgyMC00MDM1LTk4ZmUtMzA5NGFhYjk1OTk3IiwidCI6IjdlMzEwODQ1LTg0ZTEtNGRiOC1hZjk4LTcwNDA0MTkwZDhkZSJ9&pageName=ce2f74c292644e048628)
 
 ---
 
