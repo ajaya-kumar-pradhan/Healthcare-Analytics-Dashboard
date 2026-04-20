@@ -94,7 +94,7 @@ The platform unifies **financial, clinical, and operational data** into a single
 ### 1️⃣ Executive Overview
 *KPIs at a glance: Revenue, Encounters, Success Rate, Satisfaction | MoM & YTD Trends | Diagnosis Mix*
 
-![Executive Overview](images/overview.jpg)
+![Executive Overview](https://github.com/ajaya-kumar-pradhan/Healthcare-Analytics-Dashboard/blob/5bb7d8d38894822337e46ff1fc0917c1180d670a/overview.jpg)
 
 ---
 
