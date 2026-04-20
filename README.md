@@ -1,62 +1,208 @@
-# 🏥 HealthStats: Healthcare Analytics Dashboard (ClinicalOps360)
+# 🏥 HealthStat Solutions: Healthcare Analytics Platform (ClinicalOps360)
 
 [![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/)
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)](https://github.com/ajaya-kumar-pradhan)
-[![Star Schema](https://img.shields.io/badge/Star%20Schema-Architecture-blue?style=for-the-badge)](https://github.com/ajaya-kumar-pradhan)
+[![DAX](https://img.shields.io/badge/DAX-Star%20Schema-blue?style=for-the-badge)](https://github.com/ajaya-kumar-pradhan)
+
+---
 
 ## 📌 Project Overview
-**HealthStats (ClinicalOps360)** is an enterprise-grade Healthcare Analytics solution designed to provide hospital administrators and clinical leads with real-time insights into patient outcomes, operational efficiency, and financial performance. This project transforms raw clinical and billing data into a strategic decision-support system.
 
-### 🎯 Key Objectives
-- **Operational Excellence**: Monitor patient throughput, occupancy rates, and average length of stay (ALOS).
-- **Financial Intelligence**: Track Average Daily Rate (ADR), Revenue per Available Room (RevPAR), and billing accuracy.
-- **Clinical Quality**: Analyze patient outcomes and satisfaction scores to drive quality improvements.
+**HealthStat Solutions (ClinicalOps360)** is a **multi-layer healthcare analytics platform** built using Power BI, designed to simulate real-world hospital decision-making systems.
+
+It integrates **financial, operational, and clinical datasets** into a unified analytics solution, enabling stakeholders to move seamlessly from **executive-level KPIs to detailed doctor and patient-level insights**.
 
 ---
 
-## 🏗️ Data Architecture: Star Schema
-The project implements a robust **Star Schema** to ensure high performance and precise filter propagation.
+## 🎯 Business Objectives
 
-- **Fact Table**: `fact_encounters` (Granular patient-level visit data).
-- **Dimension Tables**: 
-  - `dim_patients`: Demographic intelligence.
-  - `dim_departments`: Specialty-wise performance.
-  - `dim_doctors`: Provider outcome tracking.
-  - `dim_date`: Comprehensive time-intelligence (YTD, YoY, Moving Averages).
+| Pillar | Goal |
+|---|---|
+| **Operational Excellence** | Optimize bed occupancy, wait time, and discharge delays |
+| **Financial Intelligence** | Monitor revenue (~$10M+), billing trends, and profitability |
+| **Clinical Quality** | Improve treatment success rate, reduce readmissions, enhance patient satisfaction |
 
 ---
 
-## 📊 Key DAX Measures & KPIs
-Developed over 40+ custom DAX measures for deep-dive analytics:
+## 🧩 Dashboard Architecture
 
-- **Patient Throughput**: `Total Encounters = COUNTROWS('fact_encounters')`
-- **Economic Value**: `RevPAR = DIVIDE([Total Revenue], [Total Available Room Nights])`
-- **Clinical Efficiency**: `Occupancy Rate = DIVIDE([Occupied Room Nights], [Total Capacity])`
-- **Financial Growth**: `YoY Revenue Growth = VAR PrevYear = CALCULATE([Total Revenue], SAMEPERIODLASTYEAR('dim_date'[Date])) RETURN DIVIDE([Total Revenue] - PrevYear, PrevYear)`
-
----
-
-## 🛠️ Tech Stack
-- **BI Tool**: Power BI Desktop
-- **Data Engine**: SQL Server (ETL & Views)
-- **Modeling**: DAX (Advanced Time Intelligence & RLS)
-- **Deployment**: Power BI Service (Scheduled Refresh, RLS, Mobile Compatibility)
-
----
-
-## 🚀 Key Features
-- **Row-Level Security (RLS)**: Sensitive patient data is protected; department heads only see their respective specialty data.
-- **Incremental Refresh**: Optimized for large datasets, ensuring only new encounter data is loaded.
-- **Drill-Through Analytics**: Move from high-level hospital KPIs down to individual specialty or provider performance.
-- **Automated Reporting**: Integrated with Power BI Service for daily automated data syncs.
+```
+Executive Overview
+       ↓
+Financial Analytics
+       ↓
+Operational Insights
+       ↓
+Clinical Performance
+       ↓
+Doctor-Level Drill
+       ↓
+Patient-Level Drill
+```
 
 ---
 
-## 🤝 Contact & Portfolio
-- **Name**: Ajaya Kumar Pradhan
-- **Role**: Power BI Developer | Data Analyst
-- **LinkedIn**: [ajayakumarpradhan](https://www.linkedin.com/in/ajayakumarpradhan/)
-- **Email**: [ajayapradhan.connect@gmail.com](mailto:ajayapradhan.connect@gmail.com)
+## 🏗️ Data Architecture (Star Schema)
+
+```
+                       dim_date
+                          |
+dim_patients — fact_encounters — dim_doctors
+                          |
+                   dim_departments
+```
+
+### Fact Table
+```
+fact_encounters (
+    encounter_id, patient_id, doctor_id, department_id, date_id,
+    revenue, cost, length_of_stay, readmission_flag, satisfaction_score
+)
+```
+
+### Dimension Tables
+```
+dim_patients    (patient_id, age, gender, risk_segment)
+dim_doctors     (doctor_id, doctor_name, specialization)
+dim_departments (department_id, department_name)
+dim_date        (date_id, full_date, month, year)
+```
 
 ---
-> *"In God we trust; all others must bring data." — W. Edwards Deming*
+
+## 📊 Core KPIs (DAX)
+
+```dax
+Total Revenue = SUM('fact_encounters'[revenue])
+
+Total Encounters = COUNTROWS('fact_encounters')
+
+Avg Length of Stay =
+AVERAGE('fact_encounters'[length_of_stay])
+
+Readmission Rate =
+DIVIDE(
+    CALCULATE(
+        COUNTROWS('fact_encounters'),
+        'fact_encounters'[readmission_flag] = 1
+    ),
+    COUNTROWS('fact_encounters')
+)
+
+Patient Satisfaction =
+AVERAGE('fact_encounters'[satisfaction_score])
+
+Bed Occupancy Rate =
+DIVIDE([Occupied Beds], [Total Beds])
+
+YoY Revenue Growth =
+VAR PrevYear =
+    CALCULATE(
+        [Total Revenue],
+        SAMEPERIODLASTYEAR('dim_date'[full_date])
+    )
+RETURN
+    DIVIDE([Total Revenue] - PrevYear, PrevYear)
+
+MoM Revenue Growth =
+VAR PrevMonth =
+    CALCULATE(
+        [Total Revenue],
+        DATEADD('dim_date'[full_date], -1, MONTH)
+    )
+RETURN
+    DIVIDE([Total Revenue] - PrevMonth, PrevMonth)
+```
+
+---
+
+## 🧠 Analytical Capabilities
+
+- ✅ Executive KPI Tracking (Revenue, Encounters, Growth, Satisfaction)
+- ✅ Clinical Analysis (Treatment Success vs Severity)
+- ✅ Operational Metrics (Wait Time, LOS, Discharge Delays)
+- ✅ Patient Risk Segmentation (Low / Moderate / High / Critical)
+- ✅ Doctor Performance Benchmarking
+- ✅ Diagnosis-Level Outcome Analysis
+- ✅ Trend Analysis (MoM, YoY)
+
+---
+
+## 🔍 Drill-Through Functionality
+
+Navigate from **Overview → Hospital → Doctor → Patient**
+
+Deep-dive into:
+- Individual doctor performance
+- Patient-level clinical details
+- Diagnosis-specific outcomes
+
+---
+
+## ⚙️ Tech Stack
+
+| Layer | Tool |
+|---|---|
+| BI Tool | Power BI Desktop |
+| Data Source | SQL Server |
+| Modeling | DAX, Star Schema |
+| Deployment | Power BI Service |
+
+---
+
+## 🚀 Advanced Features
+
+- Interactive multi-page dashboards
+- Drill-through navigation across hierarchy levels
+- Optimized fact-dimension data model
+- 40+ DAX measures for analytics
+- Real-world healthcare simulation
+
+---
+
+## 📈 Key Insights Generated
+
+- Identified high readmission patient segments
+- Detected operational bottlenecks in discharge process
+- Highlighted high-cost vs low-profit hospital units
+- Improved patient risk visibility across departments
+- Enabled performance comparison across doctors
+
+---
+
+## 🖼️ Dashboard Preview
+
+![Executive Overview](images/overview.png)
+![Financial Analytics](images/finance.png)
+![Operational Insights](images/operations.png)
+![Patient Analytics](images/patients.png)
+![Clinical Performance](images/clinical.png)
+
+---
+
+## 🔗 Live Dashboard
+
+👉 [View Live Power BI Report](https://app.powerbi.com/view?r=eyJrIjoiM2FkOGQ5OWYtNzgyMC00MDM1LTk4ZmUtMzA5NGFhYjk1OTk3IiwidCI6IjdlMzEwODQ1LTg0ZTEtNGRiOC1hZjk4LTcwNDA0MTkwZDhkZSJ9&pageName=ce2f74c292644e048628)
+
+---
+
+## 📂 Project Structure
+
+```
+Healthcare-Analytics-Dashboard/
+│── data/
+│── images/
+│── dashboards/
+│── README.md
+```
+
+---
+
+## 🤝 Contact
+
+**Ajaya Kumar Pradhan**
+Data Analyst | Power BI Developer
+
+📧 [ajayapradhan.connect@gmail.com](mailto:ajayapradhan.connect@gmail.com)
+🔗 [linkedin.com/in/ajayakumarpradhan](https://www.linkedin.com/in/ajayakumarpradhan/)
+💻 [github.com/ajaya-kumar-pradhan](https://github.com/ajaya-kumar-pradhan)
