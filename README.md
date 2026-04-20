@@ -172,11 +172,65 @@ Deep-dive into:
 
 ## 🖼️ Dashboard Preview
 
-![Executive Overview](images/overview.png)
-![Financial Analytics](images/finance.png)
-![Operational Insights](images/operations.png)
-![Patient Analytics](images/patients.png)
-![Clinical Performance](images/clinical.png)
+### 1️⃣ Executive Overview
+> KPIs: 10.06M Revenue · 1K Encounters · 84.2% Success Rate · 0.12 Readmission Rate · 4.91 Avg Satisfaction
+> MoM & YTD Revenue trends · Diagnosis encounter mix · Hospital satisfaction benchmarking
+
+![Executive Overview](images/overview.jpg)
+
+---
+
+### 2️⃣ Clinical Performance
+> Treatment Success vs Severity · Doctor Performance scatter · Diagnosis Outcome table
+> Selectable KPI buttons: Avg LOS · Encounters · Readmission Rate · Revenue · Satisfaction · Severity · Success Rate
+
+![Clinical Performance](images/clinical_performance.jpg)
+
+---
+
+### 3️⃣ Operations
+> Bed Occupancy Rate: 0.82 · Avg Discharge Delay: 1 · Avg Wait Time: 3.89 · Avg LOS: 4.65
+> Wait Time Heatmap (Hospital × Diagnosis) · Discharge Delay Analysis · LOS Distribution · Daily Bed Cost by Type
+
+![Operations Dashboard](images/operations.jpg)
+
+---
+
+### 4️⃣ Finance
+> Total Revenue: 10.06M · Avg Bill per Encounter: 10,060
+> Revenue by Hospital · Revenue Concentration by Diagnosis Category · Monthly Revenue & Insurance Coverage Trend
+> Insurance Covered vs Out-of-Pocket · Billing Distribution · Diagnosis Outcome table
+
+![Finance Dashboard](images/finance.jpg)
+
+**Finance — Hospital × Bed Type: Revenue-Cost Matrix** *(toggle view)*
+
+![Finance — Bed Cost Matrix](images/finance_bed_cost.jpg)
+
+---
+
+### 5️⃣ Patient Analytics
+> Multi-toggle page with 2 view modes: **Demographics** and **Risk**
+
+**Patient — Demographics View (Clinical Profile toggle)**
+> Patient Clinical Profile scatter (risk segments) · Patient Demographics by age group · Geographic Distribution
+
+![Patient — Clinical Profile](images/patient_demographics.jpg)
+
+**Patient — Demographics View (Leaderboard toggle)**
+> Patient Leaderboard (Encounters, Revenue, Avg Satisfaction, Risk Segment) · Patient Demographics · Geographic Distribution
+
+![Patient — Leaderboard](images/patient_leaderboard.jpg)
+
+**Patient — Risk Segmentation View**
+> Patient Risk Segmentation: Moderate (441) · High (307) · Low (232) · Critical (20) with Avg Satisfaction overlay
+
+![Patient — Risk Segmentation](images/patient_risk.jpg)
+
+**Patient — Profile View**
+> Patient Clinical Profile scatter with risk-coded bubbles (Critical / High / Low / Moderate Risk)
+
+![Patient — Profile](images/patient_profile.jpg)
 
 ---
 
@@ -192,6 +246,15 @@ Deep-dive into:
 Healthcare-Analytics-Dashboard/
 │── data/
 │── images/
+│   ├── overview.jpg
+│   ├── clinical_performance.jpg
+│   ├── operations.jpg
+│   ├── finance.jpg
+│   ├── finance_bed_cost.jpg
+│   ├── patient_demographics.jpg
+│   ├── patient_leaderboard.jpg
+│   ├── patient_risk.jpg
+│   └── patient_profile.jpg
 │── dashboards/
 │── README.md
 ```
