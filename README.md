@@ -101,7 +101,7 @@ The platform unifies **financial, clinical, and operational data** into a single
 ### 2️⃣ Clinical Performance
 *Treatment Success vs Severity | Doctor Performance Scatter | Diagnosis Outcome Table | Multi-KPI Toggle*
 
-![Clinical Performance](images/clinical_performance.jpg)
+![Clinical Performance](https://github.com/ajaya-kumar-pradhan/Healthcare-Analytics-Dashboard/blob/a5f1f86cdf8d283a578009d0807855101d11876c/clinical_performance.jpg)
 
 ---
 
