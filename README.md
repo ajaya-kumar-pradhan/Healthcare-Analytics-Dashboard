@@ -108,14 +108,14 @@ The platform unifies **financial, clinical, and operational data** into a single
 ### 3️⃣ Operations
 *Bed Occupancy | Discharge Delay Analysis | Wait Time Heatmap (Hospital × Diagnosis) | LOS Distribution*
 
-![Operations Dashboard](images/operations.jpg)
+![Operations Dashboard](https://github.com/ajaya-kumar-pradhan/Healthcare-Analytics-Dashboard/blob/31045d0b1d8a13ab1baf7c76f9f25cc08242e5e4/operations.jpg)
 
 ---
 
 ### 4️⃣ Finance
 *Revenue by Hospital | Insurance vs Out-of-Pocket Split | Monthly Billing Trends | Diagnosis Revenue Concentration*
 
-![Finance Dashboard](images/finance.jpg)
+![Finance Dashboard](https://github.com/ajaya-kumar-pradhan/Healthcare-Analytics-Dashboard/blob/31045d0b1d8a13ab1baf7c76f9f25cc08242e5e4/finance.jpg)
 
 *Finance — Revenue-Cost Matrix by Hospital × Bed Type (toggle view)*
 
@@ -128,7 +128,7 @@ The platform unifies **financial, clinical, and operational data** into a single
 
 | Demographics | Risk Segmentation |
 |---|---|
-| ![Patient Demographics](images/patient_demographics.jpg) | ![Patient Risk](images/patient_risk.jpg) |
+| ![Patient Demographics](https://github.com/ajaya-kumar-pradhan/Healthcare-Analytics-Dashboard/blob/31045d0b1d8a13ab1baf7c76f9f25cc08242e5e4/patient_risk.jpg) | ![Patient Risk](images/patient_risk.jpg) |
 
 | Patient Leaderboard | Clinical Profile |
 |---|---|
