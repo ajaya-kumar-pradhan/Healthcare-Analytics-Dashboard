@@ -1,251 +1,207 @@
-# 🏥 HealthStat Solutions: Healthcare Analytics Platform (ClinicalOps360)
-
-[![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/)
-[![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)](https://github.com/ajaya-kumar-pradhan)
-[![DAX](https://img.shields.io/badge/DAX-Star%20Schema-blue?style=for-the-badge)](https://github.com/ajaya-kumar-pradhan)
+# 🏥 ClinicalOps360 — Healthcare Analytics Platform
 
 <div align="center">
 
-### 👉 [View Live Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiM2FkOGQ5OWYtNzgyMC00MDM1LTk4ZmUtMzA5NGFhYjk1OTk3IiwidCI6IjdlMzEwODQ1LTg0ZTEtNGRiOC1hZjk4LTcwNDA0MTkwZDhkZSJ9&pageName=ce2f74c292644e048628)
+**Transforming raw hospital data into boardroom-ready decisions.**
+*A full-stack Power BI analytics platform simulating real-world clinical, financial, and operational intelligence.*
+
+<br>
+
+[![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/view?r=eyJrIjoiM2FkOGQ5OWYtNzgyMC00MDM1LTk4ZmUtMzA5NGFhYjk1OTk3IiwidCI6IjdlMzEwODQ1LTg0ZTEtNGRiOC1hZjk4LTcwNDA0MTkwZDhkZSJ9&pageName=ce2f74c292644e048628)
+[![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)](https://github.com/ajaya-kumar-pradhan)
+[![DAX](https://img.shields.io/badge/DAX-40%2B%20Measures-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://github.com/ajaya-kumar-pradhan)
+[![Star Schema](https://img.shields.io/badge/Model-Star%20Schema-6C3483?style=for-the-badge)](https://github.com/ajaya-kumar-pradhan)
+
+<br>
+
+### 🚀 [View Live Power BI Dashboard →](https://app.powerbi.com/view?r=eyJrIjoiM2FkOGQ5OWYtNzgyMC00MDM1LTk4ZmUtMzA5NGFhYjk1OTk3IiwidCI6IjdlMzEwODQ1LTg0ZTEtNGRiOC1hZjk4LTcwNDA0MTkwZDhkZSJ9&pageName=ce2f74c292644e048628)
 
 </div>
 
 ---
 
-## 📌 Project Overview
+## 📌 Overview
 
-**HealthStat Solutions (ClinicalOps360)** is a **multi-layer healthcare analytics platform** built using Power BI, designed to simulate real-world hospital decision-making systems.
+**ClinicalOps360** is a multi-layered healthcare analytics platform built for **HealthStat Solutions** — designed to mirror how enterprise hospitals actually make decisions.
 
-It integrates **financial, operational, and clinical datasets** into a unified analytics solution, enabling stakeholders to move seamlessly from **executive-level KPIs to detailed doctor and patient-level insights**.
+The platform unifies **financial, clinical, and operational data** into a single Power BI solution. Stakeholders can drill from executive KPIs all the way down to individual doctor and patient performance — no spreadsheets, no silos, just fast, actionable insight.
+
+> **The Business Problem:** Hospital leadership lacked a single source of truth across departments. Revenue was leaking, bed utilization was untracked, and patient risk wasn't visible until it was too late.
+>
+> **The Solution:** A 6-page interactive dashboard that surfaces the right metrics to the right audience — from CFO to clinician.
 
 ---
 
-## 🎯 Business Objectives
+## 📊 Key Features
 
-| Pillar | Goal |
+- 🔎 **Drill-through navigation** — Seamlessly explore from hospital-level → department → doctor → individual patient
+- 💰 **Revenue intelligence** — Track $10M+ in billing with monthly trend analysis, insurance vs. out-of-pocket breakdowns, and diagnosis-level profitability
+- 🛏️ **Operational efficiency monitoring** — Bed occupancy (82%), average discharge delay, wait time heatmaps, and length-of-stay distribution
+- 🧬 **Clinical outcome tracking** — Treatment success rate (84.2%), readmission rate (0.12), and severity-adjusted performance benchmarking
+- 👤 **Patient risk segmentation** — Auto-classify 1,000+ patients into Low / Moderate / High / Critical risk tiers
+- 📅 **Time intelligence** — MoM and YoY revenue growth using advanced DAX time functions
+- 📐 **40+ custom DAX measures** — Purpose-built KPIs covering every dimension of hospital performance
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Tool / Technology |
 |---|---|
-| **Operational Excellence** | Optimize bed occupancy, wait time, and discharge delays |
-| **Financial Intelligence** | Monitor revenue (~$10M+), billing trends, and profitability |
-| **Clinical Quality** | Improve treatment success rate, reduce readmissions, enhance patient satisfaction |
+| **BI & Visualization** | Power BI Desktop + Power BI Service |
+| **Data Modeling** | Star Schema (Fact + 4 Dimension Tables) |
+| **Query & Calculation** | DAX (40+ measures), M Query |
+| **Data Source** | SQL Server |
+| **Deployment** | Power BI Service (Published Live) |
 
 ---
 
-## 🧩 Dashboard Architecture
+## 📈 Key Metrics & Impact
 
-```
-Executive Overview
-       ↓
-Financial Analytics
-       ↓
-Operational Insights
-       ↓
-Clinical Performance
-       ↓
-Doctor-Level Drill
-       ↓
-Patient-Level Drill
-```
-
----
-
-## 🏗️ Data Architecture (Star Schema)
-
-```
-                       dim_date
-                          |
-dim_patients — fact_encounters — dim_doctors
-                          |
-                   dim_departments
-```
-
-### Fact Table
-```
-fact_encounters (
-    encounter_id, patient_id, doctor_id, department_id, date_id,
-    revenue, cost, length_of_stay, readmission_flag, satisfaction_score
-)
-```
-
-### Dimension Tables
-```
-dim_patients    (patient_id, age, gender, risk_segment)
-dim_doctors     (doctor_id, doctor_name, specialization)
-dim_departments (department_id, department_name)
-dim_date        (date_id, full_date, month, year)
-```
-
----
-
-## 📊 Core KPIs (DAX)
-
-```dax
-Total Revenue = SUM('fact_encounters'[revenue])
-
-Total Encounters = COUNTROWS('fact_encounters')
-
-Avg Length of Stay =
-AVERAGE('fact_encounters'[length_of_stay])
-
-Readmission Rate =
-DIVIDE(
-    CALCULATE(
-        COUNTROWS('fact_encounters'),
-        'fact_encounters'[readmission_flag] = 1
-    ),
-    COUNTROWS('fact_encounters')
-)
-
-Patient Satisfaction =
-AVERAGE('fact_encounters'[satisfaction_score])
-
-Bed Occupancy Rate =
-DIVIDE([Occupied Beds], [Total Beds])
-
-YoY Revenue Growth =
-VAR PrevYear =
-    CALCULATE(
-        [Total Revenue],
-        SAMEPERIODLASTYEAR('dim_date'[full_date])
-    )
-RETURN
-    DIVIDE([Total Revenue] - PrevYear, PrevYear)
-
-MoM Revenue Growth =
-VAR PrevMonth =
-    CALCULATE(
-        [Total Revenue],
-        DATEADD('dim_date'[full_date], -1, MONTH)
-    )
-RETURN
-    DIVIDE([Total Revenue] - PrevMonth, PrevMonth)
-```
-
----
-
-## 🧠 Analytical Capabilities
-
-- ✅ Executive KPI Tracking (Revenue, Encounters, Growth, Satisfaction)
-- ✅ Clinical Analysis (Treatment Success vs Severity)
-- ✅ Operational Metrics (Wait Time, LOS, Discharge Delays)
-- ✅ Patient Risk Segmentation (Low / Moderate / High / Critical)
-- ✅ Doctor Performance Benchmarking
-- ✅ Diagnosis-Level Outcome Analysis
-- ✅ Trend Analysis (MoM, YoY)
-
----
-
-## 🔍 Drill-Through Functionality
-
-Navigate from **Overview → Hospital → Doctor → Patient**
-
-Deep-dive into:
-- Individual doctor performance
-- Patient-level clinical details
-- Diagnosis-specific outcomes
-
----
-
-## ⚙️ Tech Stack
-
-| Layer | Tool |
+| Metric | Value |
 |---|---|
-| BI Tool | Power BI Desktop |
-| Data Source | SQL Server |
-| Modeling | DAX, Star Schema |
-| Deployment | Power BI Service |
+| 💵 Total Revenue Tracked | **$10.06M+** |
+| 🏥 Patient Encounters Analyzed | **1,000+** |
+| 📋 DAX Measures Built | **40+** |
+| ✅ Treatment Success Rate | **84.2%** |
+| 🛏️ Bed Occupancy Rate | **82%** |
+| 🔁 Readmission Rate | **0.12** |
+| ⭐ Avg Patient Satisfaction | **4.91 / 5** |
+| ⏱️ Avg Wait Time | **3.89 hrs** |
+| 📊 Dashboard Pages | **6 Linked Views** |
+
+> These metrics reflect a fully modeled, production-grade analytics environment — built to match the scale and complexity of real hospital data systems.
 
 ---
 
-## 🚀 Advanced Features
+## 🧠 Insights & Business Value
 
-- Interactive multi-page dashboards
-- Drill-through navigation across hierarchy levels
-- Optimized fact-dimension data model
-- 40+ DAX measures for analytics
-- Real-world healthcare simulation
+**What the analysis revealed:**
 
----
+- 🔴 **High-readmission segments** were concentrated in specific diagnosis categories — enabling targeted clinical intervention
+- 💸 **Revenue concentration risk** identified: a small number of diagnosis types drove a disproportionate share of billing
+- 🛏️ **Discharge delays** (avg 1 day) in certain departments were inflating length-of-stay and reducing bed turnover
+- 👨‍⚕️ **Doctor performance** varied significantly by department — benchmarking revealed outliers in both satisfaction scores and encounter volume
+- ⚠️ **20 Critical-risk patients** surfaced through segmentation, allowing proactive care escalation before adverse events
 
-## 📈 Key Insights Generated
-
-- Identified high readmission patient segments
-- Detected operational bottlenecks in discharge process
-- Highlighted high-cost vs low-profit hospital units
-- Improved patient risk visibility across departments
-- Enabled performance comparison across doctors
+**Business value delivered:**
+> Hospital administrators can identify cost leaks, track clinical KPIs, and benchmark department performance — all from a single dashboard — reducing the time to insight from days to seconds.
 
 ---
 
 ## 🖼️ Dashboard Preview
 
 ### 1️⃣ Executive Overview
-> KPIs: 10.06M Revenue · 1K Encounters · 84.2% Success Rate · 0.12 Readmission Rate · 4.91 Avg Satisfaction
-> MoM & YTD Revenue trends · Diagnosis encounter mix · Hospital satisfaction benchmarking
+*KPIs at a glance: Revenue, Encounters, Success Rate, Satisfaction | MoM & YTD Trends | Diagnosis Mix*
 
 ![Executive Overview](images/overview.jpg)
 
 ---
 
 ### 2️⃣ Clinical Performance
-> Treatment Success vs Severity · Doctor Performance scatter · Diagnosis Outcome table
-> Selectable KPI buttons: Avg LOS · Encounters · Readmission Rate · Revenue · Satisfaction · Severity · Success Rate
+*Treatment Success vs Severity | Doctor Performance Scatter | Diagnosis Outcome Table | Multi-KPI Toggle*
 
 ![Clinical Performance](images/clinical_performance.jpg)
 
 ---
 
 ### 3️⃣ Operations
-> Bed Occupancy Rate: 0.82 · Avg Discharge Delay: 1 · Avg Wait Time: 3.89 · Avg LOS: 4.65
-> Wait Time Heatmap (Hospital × Diagnosis) · Discharge Delay Analysis · LOS Distribution · Daily Bed Cost by Type
+*Bed Occupancy | Discharge Delay Analysis | Wait Time Heatmap (Hospital × Diagnosis) | LOS Distribution*
 
 ![Operations Dashboard](images/operations.jpg)
 
 ---
 
 ### 4️⃣ Finance
-> Total Revenue: 10.06M · Avg Bill per Encounter: 10,060
-> Revenue by Hospital · Revenue Concentration by Diagnosis Category · Monthly Revenue & Insurance Coverage Trend
-> Insurance Covered vs Out-of-Pocket · Billing Distribution · Diagnosis Outcome table
+*Revenue by Hospital | Insurance vs Out-of-Pocket Split | Monthly Billing Trends | Diagnosis Revenue Concentration*
 
 ![Finance Dashboard](images/finance.jpg)
 
-**Finance — Hospital × Bed Type: Revenue-Cost Matrix** *(toggle view)*
+*Finance — Revenue-Cost Matrix by Hospital × Bed Type (toggle view)*
 
 ![Finance — Bed Cost Matrix](images/finance_bed_cost.jpg)
 
 ---
 
 ### 5️⃣ Patient Analytics
-> Multi-toggle page with 2 view modes: **Demographics** and **Risk**
+*Demographics View | Risk Segmentation | Patient Leaderboard | Geographic Distribution | Clinical Profile Scatter*
 
-**Patient — Demographics View (Clinical Profile toggle)**
-> Patient Clinical Profile scatter (risk segments) · Patient Demographics by age group · Geographic Distribution
+| Demographics | Risk Segmentation |
+|---|---|
+| ![Patient Demographics](images/patient_demographics.jpg) | ![Patient Risk](images/patient_risk.jpg) |
 
-![Patient — Clinical Profile](images/patient_demographics.jpg)
+| Patient Leaderboard | Clinical Profile |
+|---|---|
+| ![Patient Leaderboard](images/patient_leaderboard.jpg) | ![Patient Profile](images/patient_profile.jpg) |
 
-**Patient — Demographics View (Leaderboard toggle)**
-> Patient Leaderboard (Encounters, Revenue, Avg Satisfaction, Risk Segment) · Patient Demographics · Geographic Distribution
+---
 
-![Patient — Leaderboard](images/patient_leaderboard.jpg)
+## 🏗️ Data Architecture
 
-**Patient — Risk Segmentation View**
-> Patient Risk Segmentation: Moderate (441) · High (307) · Low (232) · Critical (20) with Avg Satisfaction overlay
+**Star Schema Design:**
 
-![Patient — Risk Segmentation](images/patient_risk.jpg)
+```
+                       dim_date
+                          │
+dim_patients ── fact_encounters ── dim_doctors
+                          │
+                   dim_departments
+```
 
-**Patient — Profile View**
-> Patient Clinical Profile scatter with risk-coded bubbles (Critical / High / Low / Moderate Risk)
+```sql
+-- Core Fact Table
+fact_encounters (
+    encounter_id, patient_id, doctor_id, department_id, date_id,
+    revenue, cost, length_of_stay, readmission_flag, satisfaction_score
+)
 
-![Patient — Profile](images/patient_profile.jpg)
+-- Supporting Dimensions
+dim_patients    → patient_id, age, gender, risk_segment
+dim_doctors     → doctor_id, doctor_name, specialization
+dim_departments → department_id, department_name
+dim_date        → date_id, full_date, month, quarter, year
+```
+
+---
+
+## 💡 Sample DAX — Core Measures
+
+```dax
+-- Revenue Intelligence
+Total Revenue = SUM('fact_encounters'[revenue])
+
+YoY Revenue Growth =
+VAR PrevYear = CALCULATE([Total Revenue], SAMEPERIODLASTYEAR('dim_date'[full_date]))
+RETURN DIVIDE([Total Revenue] - PrevYear, PrevYear)
+
+-- Clinical KPIs
+Readmission Rate =
+DIVIDE(
+    CALCULATE(COUNTROWS('fact_encounters'), 'fact_encounters'[readmission_flag] = 1),
+    COUNTROWS('fact_encounters')
+)
+
+Treatment Success Rate =
+DIVIDE(
+    CALCULATE(COUNTROWS('fact_encounters'), 'fact_encounters'[outcome] = "Success"),
+    COUNTROWS('fact_encounters')
+)
+
+-- Operational Metrics
+Bed Occupancy Rate = DIVIDE([Occupied Beds], [Total Beds])
+Avg Length of Stay = AVERAGE('fact_encounters'[length_of_stay])
+```
 
 ---
 
 ## 📂 Project Structure
 
 ```
-Healthcare-Analytics-Dashboard/
-│── data/
-│── images/
+ClinicalOps360/
+│
+├── 📁 data/                  # Source datasets (SQL exports / CSV)
+│
+├── 📁 images/                # Dashboard screenshots
 │   ├── overview.jpg
 │   ├── clinical_performance.jpg
 │   ├── operations.jpg
@@ -255,17 +211,32 @@ Healthcare-Analytics-Dashboard/
 │   ├── patient_leaderboard.jpg
 │   ├── patient_risk.jpg
 │   └── patient_profile.jpg
-│── dashboards/
-│── README.md
+│
+├── 📁 dashboards/            # Power BI .pbix file
+│
+└── 📄 README.md
 ```
 
 ---
 
-## 🤝 Contact
+## 👤 About Me
 
-**Ajaya Kumar Pradhan**
-Data Analyst | Power BI Developer
+**Ajaya Kumar Pradhan** — Data Analyst | Power BI Developer
+
+I specialize in turning complex datasets into clean, decision-ready analytics. My work focuses on building scalable data models, writing performance-optimized DAX, and designing dashboards that non-technical stakeholders actually use.
+
+**Core Skills:** `Power BI` `DAX` `SQL Server` `Data Modeling` `Star Schema` `ETL` `KPI Design`
+
+<br>
 
 📧 [ajayapradhan.connect@gmail.com](mailto:ajayapradhan.connect@gmail.com)
 🔗 [linkedin.com/in/ajayakumarpradhan](https://www.linkedin.com/in/ajayakumarpradhan/)
 💻 [github.com/ajaya-kumar-pradhan](https://github.com/ajaya-kumar-pradhan)
+
+---
+
+<div align="center">
+
+*If this project helped or inspired you, consider giving it a ⭐ — it helps others find it too.*
+
+</div>
