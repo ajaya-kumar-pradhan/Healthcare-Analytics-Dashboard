@@ -1,4 +1,4 @@
-# 🏥 ClinicalOps360 — Healthcare Analytics Platform
+# 🏥 Healthstats — Healthcare Analytics Platform
 
 <div align="center">
 
@@ -22,7 +22,7 @@
 
 ## 📌 Overview
 
-**ClinicalOps360** is a multi-layered healthcare analytics platform built for **HealthStat Solutions** — designed to mirror how enterprise hospitals actually make decisions.
+**Healthstats** is a multi-layered healthcare analytics platform built for **HealthStat Solutions** — designed to mirror how enterprise hospitals actually make decisions.
 
 The platform unifies **financial, clinical, and operational data** into a single Power BI solution. Stakeholders can drill from executive KPIs all the way down to individual doctor and patient performance — no spreadsheets, no silos, just fast, actionable insight.
 
