@@ -89,50 +89,11 @@ The platform unifies **financial, clinical, and operational data** into a single
 
 ---
 
-## 🖼️ Dashboard Preview
+## 🖼️ Live Dashboard
 
-### 1️⃣ Executive Overview
-*KPIs at a glance: Revenue, Encounters, Success Rate, Satisfaction | MoM & YTD Trends | Diagnosis Mix*
+> ⚠️ **Note:** The embedded view below renders on portfolio websites. On GitHub, click the link above to open the live dashboard.
 
-![Executive Overview](https://github.com/ajaya-kumar-pradhan/Healthcare-Analytics-Dashboard/blob/5bb7d8d38894822337e46ff1fc0917c1180d670a/overview.jpg)
-
----
-
-### 2️⃣ Clinical Performance
-*Treatment Success vs Severity | Doctor Performance Scatter | Diagnosis Outcome Table | Multi-KPI Toggle*
-
-![Clinical Performance](https://github.com/ajaya-kumar-pradhan/Healthcare-Analytics-Dashboard/blob/a5f1f86cdf8d283a578009d0807855101d11876c/clinical_performance.jpg)
-
----
-
-### 3️⃣ Operations
-*Bed Occupancy | Discharge Delay Analysis | Wait Time Heatmap (Hospital × Diagnosis) | LOS Distribution*
-
-![Operations Dashboard](https://github.com/ajaya-kumar-pradhan/Healthcare-Analytics-Dashboard/blob/31045d0b1d8a13ab1baf7c76f9f25cc08242e5e4/operations.jpg)
-
----
-
-### 4️⃣ Finance
-*Revenue by Hospital | Insurance vs Out-of-Pocket Split | Monthly Billing Trends | Diagnosis Revenue Concentration*
-
-![Finance Dashboard](https://github.com/ajaya-kumar-pradhan/Healthcare-Analytics-Dashboard/blob/31045d0b1d8a13ab1baf7c76f9f25cc08242e5e4/finance.jpg)
-
-*Finance — Revenue-Cost Matrix by Hospital × Bed Type (toggle view)*
-
-![Finance — Bed Cost Matrix](images/finance_bed_cost.jpg)
-
----
-
-### 5️⃣ Patient Analytics
-*Demographics View | Risk Segmentation | Patient Leaderboard | Geographic Distribution | Clinical Profile Scatter*
-
-| Demographics | Risk Segmentation |
-|---|---|
-| ![Patient Demographics](https://github.com/ajaya-kumar-pradhan/Healthcare-Analytics-Dashboard/blob/31045d0b1d8a13ab1baf7c76f9f25cc08242e5e4/patient_risk.jpg) | ![Patient Risk](images/patient_risk.jpg) |
-
-| Patient Leaderboard | Clinical Profile |
-|---|---|
-| ![Patient Leaderboard](images/patient_leaderboard.jpg) | ![Patient Profile](images/patient_profile.jpg) |
+<iframe title="Healthcare Analytics Dashboard" width="100%" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiM2FkOGQ5OWYtNzgyMC00MDM1LTk4ZmUtMzA5NGFhYjk1OTk3IiwidCI6IjdlMzEwODQ1LTg0ZTEtNGRiOC1hZjk4LTcwNDA0MTkwZDhkZSJ9" frameborder="0" allowFullScreen="true"></iframe>
 
 ---
 
@@ -200,17 +161,6 @@ Avg Length of Stay = AVERAGE('fact_encounters'[length_of_stay])
 ClinicalOps360/
 │
 ├── 📁 data/                  # Source datasets (SQL exports / CSV)
-│
-├── 📁 images/                # Dashboard screenshots
-│   ├── overview.jpg
-│   ├── clinical_performance.jpg
-│   ├── operations.jpg
-│   ├── finance.jpg
-│   ├── finance_bed_cost.jpg
-│   ├── patient_demographics.jpg
-│   ├── patient_leaderboard.jpg
-│   ├── patient_risk.jpg
-│   └── patient_profile.jpg
 │
 ├── 📁 dashboards/            # Power BI .pbix file
 │
