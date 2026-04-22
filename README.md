@@ -91,9 +91,9 @@ The platform unifies **financial, clinical, and operational data** into a single
 
 ## 🖼️ Live Dashboard
 
-> ⚠️ **Note:** The embedded view below renders on portfolio websites. On GitHub, click the link above to open the live dashboard.
+> Click the preview below to open the fully interactive dashboard in Power BI.
 
-<iframe title="Healthcare Analytics Dashboard" width="100%" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiM2FkOGQ5OWYtNzgyMC00MDM1LTk4ZmUtMzA5NGFhYjk1OTk3IiwidCI6IjdlMzEwODQ1LTg0ZTEtNGRiOC1hZjk4LTcwNDA0MTkwZDhkZSJ9" frameborder="0" allowFullScreen="true"></iframe>
+[![Healthstats Dashboard Preview](https://github.com/ajaya-kumar-pradhan/Healthcare-Analytics-Dashboard/blob/5bb7d8d38894822337e46ff1fc0917c1180d670a/overview.jpg)](https://app.powerbi.com/view?r=eyJrIjoiM2FkOGQ5OWYtNzgyMC00MDM1LTk4ZmUtMzA5NGFhYjk1OTk3IiwidCI6IjdlMzEwODQ1LTg0ZTEtNGRiOC1hZjk4LTcwNDA0MTkwZDhkZSJ9&pageName=ce2f74c292644e048628)
 
 ---
 
